@@ -1,0 +1,481 @@
+@import url(discover.less);
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+header,
+menu,
+section,
+div,
+p,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+textarea,
+select,
+input,
+button {
+    font-size: 12px;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+em,
+i {
+    font-style: normal;
+    text-align: left;
+    font-size: inherit;
+}
+
+html,
+body,
+img,
+iframe {
+    border: 0;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+input:focus,
+textarea:focus,
+span:focus,
+a:focus,
+button:focus {
+    outline: none;
+}
+
+li,
+s {
+    list-style: none;
+}
+
+img,
+.txt {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.inner {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    clear: both;
+}
+
+
+/* 首页topbar */
+
+.m-header {
+    width: 100%;
+    height: 70px;
+    background-image: url(../img/topbar.png);
+    background-position: 0 -80px;
+    background-repeat: repeat-x;
+    /*logo*/
+    .m-logo {
+        float: left;
+        width: 174px;
+        a {
+            display: block;
+            width: 157px;
+            height: 33px;
+            padding: 22px 18px 0 0;
+            background-image: url(../img/topbar.png);
+            background-position: 0 15px;
+            background-repeat: no-repeat;
+            text-indent: -999em;
+        }
+    }
+    /* 头部导航 */
+    .m-top-nav {
+        float: left;
+        li {
+            float: left;
+            height: 70px;
+            font-size: 14px;
+            &.download {
+                em {
+                    padding-right: 41px;
+                }
+                sup {
+                    position: absolute;
+                    top: 18px;
+                    left: 88px;
+                    width: 28px;
+                    height: 19px;
+                    z-index: 4;
+                    background-image: url(../img/topbar.png);
+                    background-position: 50px 0;
+                }
+            }
+        }
+        a {
+            display: block;
+            color: #ccc;
+            line-height: 70px;
+            position: relative;
+        }
+        em {
+            position: relative;
+            z-index: 3;
+            height: 70px;
+            padding: 0 20px 0 18px;
+        }
+        // hove 时背景
+        .bg {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            display: none;
+            &.active {
+                display: block;
+            }
+            .bg-l {
+                width: 50%;
+                height: 70px;
+                float: left;
+                background-image: url(../img/topbar.png);
+                background-position: left -470px;
+            }
+            .bg-r {
+                width: 50%;
+                height: 70px;
+                float: right;
+                background-image: url(../img/topbar.png);
+                background-position: right -470px;
+            }
+        }
+    }
+    // 搜索
+    .m-search-bar {
+        float: right;
+        margin-top: 21px;
+        width: 271px;
+        height: 31px;
+        .m-search {
+            float: left;
+            width: 210px;
+            height: 31px;
+            input {
+                width: 178px;
+                line-height: 31px;
+                background-image: url(../img/topbar.png);
+                background-position: 0 -550px;
+                border: 0;
+                padding-left: 32px;
+            }
+        }
+        .m-top-login {
+            float: right;
+            position: relative;
+            margin-left: 15px;
+            width: 46px;
+            height: 31px;
+            background-image: url(../img/topbar.png);
+            background-position: right -366px;
+            &:hover {
+                .m-list {
+                    display: block;
+                }
+            }
+            a {
+                display: block;
+                width: 28px;
+                margin-top: 10px;
+                color: #787878;
+            }
+        }
+        // 可选择账号登录列表
+        .m-list {
+            display: none;
+            position: absolute;
+            top: 38px;
+            left: -96px;
+            border-radius: 3px;
+            border: 1px solid #000;
+            background-color: #2a2a2a;
+            .bar {
+                position: absolute;
+                top: -8px;
+                left: 50%;
+                width: 16px;
+                height: 9px;
+                margin-left: 21px;
+                background-image: url(../img/toplist.png);
+                background-repeat: no-repeat;
+                background-position: -20px 0;
+            }
+            a {
+                display: block;
+                margin-top: 0;
+                width: 132px;
+                height: 38px;
+                line-height: 38px;
+                color: #ccc;
+                padding-left: 24px;
+                &:hover {
+                    background-color: #353535;
+                    color: #fff;
+                    text-decoration: none;
+                }
+                .icon {
+                    float: left;
+                    width: 18px;
+                    height: 18px;
+                    margin: 10px 10px 0 -7px;
+                    background-image: url(../img/toplist.png);
+                    background-repeat: no-repeat;
+                }
+                .icon-mb {
+                    background-position: 0 0;
+                }
+                .icon-wx {
+                    background-position: -20px -20px;
+                }
+                .icon-qq {
+                    background-position: -20px -40px;
+                }
+                .icon-wb {
+                    background-position: 0 -20px;
+                }
+                .icon-wy {
+                    background-position: 0 -40px;
+                }
+            }
+        }
+    }
+}
+
+// 底部
+.m-play {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .inner {
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        margin-left: -440px;
+        overflow: hidden;
+        .btn {
+            float: left;
+            width: 25px;
+            height: 25px;
+            margin: 11px 2px 0 0;
+            background-image: url(../img/playbar.png);
+            background-repeat: no-repeat;
+        }
+    }
+    .bg {
+        height: 53px;
+        background-image: url(../img/playbar.png);
+        background-position: 0 0;
+        background-repeat: repeat-x;
+    }
+    // 右侧小锁
+    .clock {
+        position: absolute;
+        top: -14px;
+        right: 15px;
+        width: 52px;
+        height: 67px;
+        background-image: url(../img/playbar.png);
+        background-position: 0 -380px;
+        background-repeat: no-repeat;
+        .btn {
+            display: block;
+            width: 18px;
+            height: 18px;
+            margin: 6px 0 0 17px;
+            background-image: url(../img/playbar.png);
+            background-position: -100px -380px;
+            background-repeat: no-repeat;
+        }
+    }
+    // 控制按钮
+    .play-ctrl {
+        float: left;
+        width: 157px;
+        padding: 6px 0 0 6px;
+        a {
+            float: left;
+            width: 28px;
+            height: 28px;
+            margin-right: 8px;
+            margin-top: 5px;
+            background-image: url(../img/playbar.png);
+            background-repeat: no-repeat;
+        }
+        .play-ctrl-prev {
+            background-position: 0 -130px;
+            &:hover {
+                background-position: -30px -130px;
+            }
+        }
+        .play-ctrl-pause {
+            width: 36px;
+            height: 36px;
+            margin-top: 0;
+            background-position: 0 -204px;
+            &:hover {
+                background-position: -40px -204px;
+            }
+        }
+        .play-ctrl-next {
+            background-position: -80px -130px;
+            &:hover {
+                background-position: -110px -130px;
+            }
+        }
+    }
+    .m-play-title {
+        float: left;
+        margin: 6px 15px 0 0;
+        position: relative;
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 35px;
+            background-image: url(../img/playbar.png);
+            background-repeat: no-repeat;
+            background-position: 0 -80px;
+        }
+    }
+    // 播放进度条
+    .play-progress {
+        float: left;
+        width: 570px;
+        margin-top: 28px;
+        position: relative;
+        .play-progress-bar {
+            position: relative;
+            width: 455px;
+            height: 9px;
+            float: left;
+            background-image: url(../img/statbar.png);
+            background-repeat: no-repeat;
+            background-position: right 0;
+        }
+        .drag-bar {
+            position: absolute;
+            top: -7px;
+            width: 22px;
+            height: 24px;
+            margin-left: -11px;
+            background-image: url(../img/iconall.png);
+            background-repeat: no-repeat;
+            background-position: 0 -250px;
+            &:hover {
+                background-position: 0 -280px;
+            }
+        }
+        .play-progress-time {
+            position: absolute;
+            right: 35px;
+            top: -3px;
+            color: #797979;
+            em {
+                color: #a1a1a1;
+            }
+        }
+    }
+    // 分享和收藏
+    .play-open {
+        float: left;
+        width: 60px;
+        .collection {
+            background-position: -88px -163px;
+            &:hover {
+                background-position: -88px -189px;
+            }
+        }
+        .share {
+            background-position: -114px -163px;
+            &:hover {
+                background-position: -114px -189px;
+            }
+        }
+    }
+    // 音量
+    .play-box {
+        float: left;
+        width: 118px;
+        padding-left: 13px;
+        background-image: url(../img/playbar.png);
+        background-repeat: no-repeat;
+        background-position: -147px -238px;
+        .volume {
+            background-position: -2px -248px;
+            &:hover {
+                background-position: -31px -248px;
+            }
+        }
+        .loop {
+            background-position: -3px -344px;
+            &:hover {
+                background-position: -33px -344px;
+            }
+        }
+        .play-list {
+            width: 59px;
+            height: 30px;
+            background-position: -42px -68px;
+            &:hover {
+                background-position: -42px -98px;
+            }
+        }
+    }
+}
