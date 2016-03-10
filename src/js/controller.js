@@ -6,3 +6,15 @@
  */
 
 'use strict';
+
+(function(angular) {
+    angular.module('controller', [
+        'discover_controller',
+        'download_controller',
+        'friend_controller',
+        'my_controller'
+    ])
+        .controller('AppCtrl', ['$scope', function($scope) {
+
+        }]);
+})(angular);
